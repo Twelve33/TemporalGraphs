@@ -31,7 +31,7 @@ for(time in seq(3,total_time,dt)){
   #remove edges which are not present
   gt <- delete_edges(g,which(E(g)$time>time))
   #with the new graph, update the layout
-  layout.new <- layout_with_fr(gt,coords=layout.old,niter=10,start.temp.0.05,grid="nogrid")
+  layout.new <- layout_with_fr(gt,coords=layout.old,niter=10,start.temp=0.05,grid="nogrid")
   #plot the new graph
   plot(gt,layout=layout.new,vertex.label=" ",vertex.size=1+2*log(degree(gt)),vertex.frame.color=V(g)$color,edge.width=1.5,asp=9/16,margin=-0.15)
   #use new layout in the next round
